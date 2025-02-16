@@ -1,147 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Detail</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        body {
-            background-color: #1c1c1c;
-            color: #fff;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-        }
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            background-color: #000;
-        }
-        .header a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-        .main-content {
-            display: flex;
-            margin-top: 20px;
-        }
-        .thumbnail {
-            position: relative;
-            width: 320px;  /* You can adjust the width */
-            height: 180px; /* You can adjust the height */
-            overflow: hidden;
-            border-radius: 10px; /* Adds rounded corners */
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Adds a shadow effect */
-        }
-        
-        .thumbnail img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Makes sure image covers the area without stretching */
-        }
-        
-        .play-button {
-            position: absolute;
-            top: 50%; 
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent background */
-            border: none;
-            border-radius: 50%; /* Circular button */
-            padding: 10px;
-            cursor: pointer;
-            font-size: 24px; /* Size of the play icon */
-            color: #333; /* Color of the play icon */
-        }
-        
-        .video-thumbnail {
-            position: relative;
-            display: inline-block;
-        }
-        
-        .video-thumbnail img {
-            width: 100%;   /* Make the image responsive */
-            height: auto;  /* Keep the aspect ratio */
-            border-radius: 8px; /* Optional: add rounded corners */
-        }
-        
-        .play-button {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent background */
-            border: none;
-            border-radius: 50%;
-            padding: 10px; /* Spacing around the icon */
-            cursor: pointer;
-            font-size: 24px; /* Size of the play icon */
-        }
-        
-        .play-button i {
-            color: #333; /* Color for the play icon */
-        }
-        .details {
-            max-width: 500px;
-        }
-        .details h1 {
-            font-size: 36px;
-            margin: 10px 0;
-        }
-        .details p {
-            margin: 10px 0;
-        }
-        .button-container {
-            margin-top: 20px;
-        }
-        .btn {
-            background-color: #e50914;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-right: 10px;
-        }
-    </style>
-</head>
-<body>
-
-<div class="header">
-    <h1>sriflicks</h1>
-    <div>
-        <a href="#">Movies</a>
-        <a href="#">TV Shows</a>
-        <a href="#">Genres</a>
-        <a href="#">Popular People</a>
-        <a href="#" style="background-color: #e50914; border-radius: 5px; padding: 5px 10px;">Sign In</a>
-        <a href="#" style="background-color: #e50914; border-radius: 5px; padding: 5px 10px;">Register</a>
-    </div>
+<html> 
+<head> 
+<style> 
+body { 
+margin: 0; 
+height: 100%; 
+overflow: hidden; 
+}
+#myVideo { 
+position: absolute; 
+right: 0; 
+bottom: 0; 
+min-width: 100%; 
+min-height: 100%; 
+width: auto; 
+height: auto; 
+}
+.content { 
+position: absolute; 
+top: 50%; 
+left: 50%; 
+transform: translate(-50%, -50%); 
+color: white; /* Ensure text is readable */ 
+text-align: 
+center; 
+z-index: 1; } 
+</style> </head> <body>
+<video autoplay muted loop id="myVideo">
+<source src="sample.mp4" type="video/mp4"> 
+</video>
+<div class="content"> 
+<h1>Heading</h1> 
+<p>Lorem ipsum...</p> 
+<button id="myBtn" onclick="myFunction()">Pause</button>
 </div>
-
-<div class="main-content">
-    <div class="video-thumbnail">
-        <img src="https://image.tmdb.org/t/p/original/lgkPzcOSnTvjeMnuFzozRO5HHw1.jpg" alt="Movie Thumbnail">
-        <button class="play-button"><i class="fas fa-play"></i></button>
-    </div>
-    <div class="details">
-        <h1>Nosferatu</h1>
-        <p><strong>Rating:</strong> 6.7/10 (2059 users)</p>
-        <p><strong>Released:</strong> 2024-12-25</p>
-        <p><strong>Runtime:</strong> 139 minutes</p>
-        <p><strong>Genre:</strong> Horror, Fantasy</p>
-        <p><strong>Stars:</strong> Lily-Rose Depp, Nicholas Hoult, Bill Skarsgård, Aaron Taylor-Johnson, Willem Dafoe</p>
-        <p><strong>Director:</strong> Jan Cajzl, Pavel Cajzl, Miroslav Lhatka, Josh Robertson, Bernard Bellew</p>
-        <div class="button-container">
-            <button class="btn">Watch Now</button>
-            <button class="btn">Download</button>
-        </div>
-    </div>
-</div>
-
-</body>
-</html>
+<script> 
+function myFunction() { 
+var x = document.getElementById("myVideo"); 
+if (x.paused) { x.play(); 
+} else { x.pause(); 
+} 
+} 
+</script>
+</body> </html>
