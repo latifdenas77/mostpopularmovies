@@ -1,147 +1,111 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Page</title>
+    <title>Movie Detail</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #000;
+            background-color: #1c1c1c;
             color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
         }
-        header {
+        .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 30px;
-            background: rgba(0, 0, 0, 0.5);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
+            padding: 10px 20px;
+            background-color: #000;
         }
-        nav {
-            display: flex;
-            gap: 20px;
-        }
-        nav a {
+        .header a {
             color: #fff;
             text-decoration: none;
-            font-size: 16px;
-            transition: color 0.3s;
+            margin: 0 10px;
         }
-        nav a:hover {
-            color: #00aeff;
-        }
-        .search-container {
+        .main-content {
             display: flex;
-            align-items: center;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 20px;
-            padding: 5px 10px;
+            margin-top: 20px;
         }
-        .search-container input {
-            border: none;
-            background: transparent;
-            color: white;
-            outline: none;
-            padding: 5px;
-        }
-        .search-container i {
-            color: white;
-        }
-        .register {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .register i {
-            font-size: 18px;
-        }
-        .hero {
+        .thumbnail {
             position: relative;
-            margin-top: 60px;
-            text-align: center;
-            overflow: hidden;
+            margin-right: 20px;
         }
-        .hero img {
-            width: 100%;
-            opacity: 0.3;
-            filter: blur(5px);
+        .thumbnail img {
+            width: 300px;
+            border-radius: 10px;
         }
         .play-button {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background-color: rgba(0, 0, 0, 0.6);
-            border: 4px solid #00aeff;
             position: absolute;
-            top: 50%;
-            left: 50%;
+            top: 40%;
+            left: 40%;
             transform: translate(-50%, -50%);
+            background-color: red;
+            border: none;
+            border-radius: 50%;
+            padding: 10px;
+            color: white;
             cursor: pointer;
+            font-size: 20px;
         }
-        .play-button span {
-            font-size: 40px;
-            color: #00aeff;
+        .details {
+            max-width: 500px;
         }
-        .watch-download {
-            text-align: center;
+        .details h1 {
+            font-size: 36px;
+            margin: 10px 0;
+        }
+        .details p {
+            margin: 10px 0;
+        }
+        .button-container {
             margin-top: 20px;
         }
         .btn {
-            background-color: transparent;
-            color: #00aeff;
+            background-color: #e50914;
+            color: white;
             padding: 10px 20px;
-            border: 2px solid #00aeff;
+            border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
-            margin: 10px;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-        .btn i {
-            font-size: 14px;
+            margin-right: 10px;
         }
     </style>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-<header>
-    <nav>
-        <a href="#">Genres</a>
+<div class="header">
+    <h1>sriflicks</h1>
+    <div>
         <a href="#">Movies</a>
         <a href="#">TV Shows</a>
+        <a href="#">Genres</a>
         <a href="#">Popular People</a>
-    </nav>
-    <div class="search-container">
-        <i class="fas fa-search"></i>
-        <input type="text" placeholder="Search...">
-    </div>
-    <div class="register">
-        <i class="fas fa-user-circle"></i>
-        <span>Register</span>
-    </div>
-</header>
-
-<div class="hero">
-    <img src="https://image.tmdb.org/t/p/original/lgkPzcOSnTvjeMnuFzozRO5HHw1.jpg" alt="Background">
-    <div class="play-button">
-        <span>▶</span>
+        <a href="#" style="background-color: #e50914; border-radius: 5px; padding: 5px 10px;">Sign In</a>
+        <a href="#" style="background-color: #e50914; border-radius: 5px; padding: 5px 10px;">Register</a>
     </div>
 </div>
 
-<div class="watch-download">
-    <button class="btn"><i class="fas fa-play"></i> Watch Now</button>
-    <button class="btn"><i class="fas fa-download"></i> Download</button>
+<div class="main-content">
+    <div class="thumbnail">
+        <img src="https://image.tmdb.org/t/p/original/lgkPzcOSnTvjeMnuFzozRO5HHw1.jpg" alt="Movie Thumbnail">
+        <button class="play-button"><i class="fas fa-play"></i></button>
+    </div>
+    <div class="details">
+        <h1>Nosferatu</h1>
+        <p><strong>Rating:</strong> 6.7/10 (2059 users)</p>
+        <p><strong>Released:</strong> 2024-12-25</p>
+        <p><strong>Runtime:</strong> 139 minutes</p>
+        <p><strong>Genre:</strong> Horror, Fantasy</p>
+        <p><strong>Stars:</strong> Lily-Rose Depp, Nicholas Hoult, Bill Skarsgård, Aaron Taylor-Johnson, Willem Dafoe</p>
+        <p><strong>Director:</strong> Jan Cajzl, Pavel Cajzl, Miroslav Lhatka, Josh Robertson, Bernard Bellew</p>
+        <div class="button-container">
+            <button class="btn">Watch Now</button>
+            <button class="btn">Download</button>
+        </div>
+    </div>
 </div>
 
 </body>
